@@ -1,0 +1,11 @@
+version: "3"
+services:
+  gewiss_db:
+    image: postgis/postgis:13-3.1-alpine
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - "../.gitignored/db/.pgdata:/var/lib/postgresql/data/pgdata"
